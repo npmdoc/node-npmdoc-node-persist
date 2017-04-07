@@ -1,0 +1,2363 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/simonlast/node-persist#readme">node-persist (v2.0.10)</a>
+</h1>
+<h4>Super-easy (and fast) persistent data structures in Node.js, modeled after HTML5 localStorage</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-persist">module node-persist</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.create">
+            function <span class="apidocSignatureSpan">node-persist.</span>create
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.init">
+            function <span class="apidocSignatureSpan">node-persist.</span>init
+            <span class="apidocSignatureSpan">(userOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.initSync">
+            function <span class="apidocSignatureSpan">node-persist.</span>initSync
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage">
+            function <span class="apidocSignatureSpan">node-persist.</span>local_storage
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-persist.</span>local_storage.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-persist.local_storage">module node-persist.local_storage</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.local_storage">
+            function <span class="apidocSignatureSpan">node-persist.</span>local_storage
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-persist.local_storage.prototype">module node-persist.local_storage.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.calcTTL">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>calcTTL
+            <span class="apidocSignatureSpan">(ttl)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.clear">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>clear
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.clearSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>clearSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.del">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>del
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.forEach">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>forEach
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.get">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>get
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.getItem">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>getItem
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.getItemSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>getItemSync
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.init">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>init
+            <span class="apidocSignatureSpan">(userOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.initSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>initSync
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.isExpired">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>isExpired
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.keys">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>keys
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.length">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>length
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.log">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>log
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.md5">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>md5
+            <span class="apidocSignatureSpan">(data)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.parse">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parse
+            <span class="apidocSignatureSpan">(str)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.parseFile">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseFile
+            <span class="apidocSignatureSpan">(filename, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.parseFileSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseFileSync
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.parseStorageDir">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseStorageDir
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.parseStorageDirSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseStorageDirSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.persist">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persist
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.persistKey">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persistKey
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.persistKeySync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persistKeySync
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.persistSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persistSync
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.removeExpiredItems">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removeExpiredItems
+            <span class="apidocSignatureSpan">(callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.removeItem">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removeItem
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.removeItemSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removeItemSync
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.removePersistedKey">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removePersistedKey
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.removePersistedKeySync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removePersistedKeySync
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.resolveDir">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>resolveDir
+            <span class="apidocSignatureSpan">(dir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.rm">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>rm
+            <span class="apidocSignatureSpan">(key, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.set">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>set
+            <span class="apidocSignatureSpan">(key, value, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.setItem">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>setItem
+            <span class="apidocSignatureSpan">(key, value, options, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.setItemSync">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>setItemSync
+            <span class="apidocSignatureSpan">(key, value, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.setOptions">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>setOptions
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.startExpiredKeysInterval">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>startExpiredKeysInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.startPersistInterval">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>startPersistInterval
+            <span class="apidocSignatureSpan">(persistFunction)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.stopExpiredKeysInterval">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>stopExpiredKeysInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.stopPersistInterval">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>stopPersistInterval
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.stringify">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>stringify
+            <span class="apidocSignatureSpan">(obj)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.values">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>values
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.local_storage.prototype.valuesWithKeyMatch">
+            function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>valuesWithKeyMatch
+            <span class="apidocSignatureSpan">(match)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-persist" id="apidoc.module.node-persist">module node-persist</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.create" id="apidoc.element.node-persist.create">
+        function <span class="apidocSignatureSpan">node-persist.</span>create
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (userOptions) {
+    return LocalStorage(userOptions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you choose to create multiple instances of storage, you can. Just avoid using the same `dir` for the storage location.
+__You still have to call `init` or `initSync` after `create`__ - you can pass your configs to either `create` or `init/Sync`
+
+The reason we don't call `init` in the constructor (or when you `create`) because we can only do so for the `initSync` version
+, the async `init` returns a promise, and in order to maintain that API, we cannot return the promise in the constructor, so `init
+` must be called on the instance of new LocalStorage();
+
+```javascript
+var storage = require('node-persist');
+var myStorage = storage.<span class="apidocCodeKeywordSpan">create</span>({dir: 'myDir', ttl: 3000});
+myStorage.init().then(function() { // or you can use initSync()
+   // ...
+});
+```
+
+### Contributing
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.init" id="apidoc.element.node-persist.init">
+        function <span class="apidocSignatureSpan">node-persist.</span>init
+        <span class="apidocSignatureSpan">(userOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (userOptions, callback) {
+    localStorage = nodePersist.defaultInstance = nodePersist.create(userOptions);
+    var ret = localStorage.init(callback);
+    mixin(nodePersist, localStorage, {skip: ['init', 'initSync', 'create']});
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Basic Example
+
+Async example
+```js
+//you must first call storage.init
+
+storage.<span class="apidocCodeKeywordSpan">init</span>( /* options ... */ ).then(function() {
+//then start using it
+storage.setItem('name','yourname')
+.then(function() {
+
+  return storage.getItem('name')
+})
+.then(function(value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.initSync" id="apidoc.element.node-persist.initSync">
+        function <span class="apidocSignatureSpan">node-persist.</span>initSync
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initSync = function (userOptions) {
+    localStorage = nodePersist.defaultInstance = nodePersist.create(userOptions);
+    var ret = localStorage.initSync();
+    mixin(nodePersist, localStorage, {skip: ['init', 'initSync', 'create']});
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+```
+
+Sync example
+```
+//you must first call storage.initSync
+storage.<span class="apidocCodeKeywordSpan">initSync</span>();
+
+//then start using it
+storage.setItemSync('name','yourname');
+console.log(storage.getItemSync('name')); // yourname
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage" id="apidoc.element.node-persist.local_storage">
+        function <span class="apidocSignatureSpan">node-persist.</span>local_storage
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">local_storage = function (userOptions) {
+    if(!(this instanceof LocalStorage)) {
+        return new LocalStorage(userOptions);
+    }
+    this.data = {};
+    this.changes = {};
+    this.setOptions(userOptions);
+
+    // we don't call init in the constructor because we can only do so for the initSync
+    // for init async, it returns a promise, and in order to maintain that API, we cannot return the promise in the constructor
+    // so init must be called, separately, on the instance of new LocalStorage();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-persist.local_storage" id="apidoc.module.node-persist.local_storage">module node-persist.local_storage</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.local_storage" id="apidoc.element.node-persist.local_storage.local_storage">
+        function <span class="apidocSignatureSpan">node-persist.</span>local_storage
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">local_storage = function (userOptions) {
+    if(!(this instanceof LocalStorage)) {
+        return new LocalStorage(userOptions);
+    }
+    this.data = {};
+    this.changes = {};
+    this.setOptions(userOptions);
+
+    // we don't call init in the constructor because we can only do so for the initSync
+    // for init async, it returns a promise, and in order to maintain that API, we cannot return the promise in the constructor
+    // so init must be called, separately, on the instance of new LocalStorage();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-persist.local_storage.prototype" id="apidoc.module.node-persist.local_storage.prototype">module node-persist.local_storage.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.calcTTL" id="apidoc.element.node-persist.local_storage.prototype.calcTTL">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>calcTTL
+        <span class="apidocSignatureSpan">(ttl)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">calcTTL = function (ttl) {
+    // only check for undefined, if null was passed in setItem then we probably didn't want to use the this.options.ttl
+    if (typeof ttl == 'undefined') {
+        ttl = this.options.ttl;
+    } else {
+        ttl = ttl ? isNumber(ttl) &amp;&amp; ttl &gt; 0 ? ttl : defaultTTL : false;
+    }
+    return ttl ? new Date().getTime() + ttl : undefined;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var logmsg = "set (" + key + ": " + this.stringify(value) + ")";
+
+var deferred = Q.defer();
+var deferreds = [];
+
+// ttl is different that the other options because we can pass a different for each setItem, as well as have a default one.
+var ttl = this.<span class="apidocCodeKeywordSpan">calcTTL</span>(options.ttl);
+this.data[key] = {value: value, ttl: ttl};
+
+var instanceOptions = this.options;
+var result = {key: key, value: value, ttl: ttl, queued: !!instanceOptions.interval, manual: !instanceOptions.interval &amp;&amp;
+; !instanceOptions.continuous};
+
+var onSuccess = function () {
+    callback(null, result);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.clear" id="apidoc.element.node-persist.local_storage.prototype.clear">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>clear
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clear = function (callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var deferred = Q.defer();
+    var deferreds = [];
+
+    var keys = this.keys();
+    for (var i = 0; i &lt; keys.length; i++) {
+        deferreds.push(this.removePersistedKey(keys[i]));
+    }
+
+    Q.all(deferreds).then(
+        function() {
+            this.data = {};
+            this.changes = {};
+            deferred.resolve();
+            callback();
+        }.bind(this),
+        function(err) {
+            deferred.reject(err);
+            callback(err);
+        });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.clearSync" id="apidoc.element.node-persist.local_storage.prototype.clearSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>clearSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">clearSync = function () {
+    var keys = this.keys(true);
+    for (var i = 0; i &lt; keys.length; i++) {
+        this.removePersistedKeySync(keys[i]);
+    }
+    this.data = {};
+    this.changes = {};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.del" id="apidoc.element.node-persist.local_storage.prototype.del">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>del
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">del = function (key, callback) {
+    return this.removeItem(key, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `storage.getItem()` now returns a promise
+* `storage.valuesWithKeyMatch()` no longer accepts a callback
+* `storage.values()` no longer accepts a callback
+* `storage.key()` is gone
+* The default `dir` is now `process.cwd() + (dir || '.node-persist/storage')`, unless you use an absolute path
+* added `storage.get()`, alias to `getItem()`
+* added `storage.set()`, alias to `setItem()`
+* added `storage.<span class="apidocCodeKeywordSpan">del</span>()`, `storage.rm()`, as aliases to `removeItem()`
+* Keys, on the file system are base64 encoded with the replacement of the `/`
+
+## API Documentation
+
+#### `init(options, [callback])` - asynchronous*, returns Promise
+This function reads what's on disk and loads it into memory, if the storage dir is new, it will create it
+##### Options
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.forEach" id="apidoc.element.node-persist.local_storage.prototype.forEach">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>forEach
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">forEach = function (callback) {
+    return this.keys().forEach(function(key) {
+        callback(key, this.data[key].value);
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+This function returns the number of keys stored in the database.
+
+#### `forEach(callback)` - synchronous, assuming callback is as well.
+
+This function iterates over each key/value pair and executes a callback.
+
+```javascript
+storage.<span class="apidocCodeKeywordSpan">forEach</span>(function(key, value) {
+	// use key and value
+});
+```
+
+### Fine-grained control
+Make sure you set `continuous:false` in the `options` hash, and you don't set an `interval`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.get" id="apidoc.element.node-persist.local_storage.prototype.get">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>get
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">get = function (key, callback) {
+    return this.getItem(key, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Mostly non-backward changes
+
+* `storage.getItem()` now returns a promise
+* `storage.valuesWithKeyMatch()` no longer accepts a callback
+* `storage.values()` no longer accepts a callback
+* `storage.key()` is gone
+* The default `dir` is now `process.cwd() + (dir || '.node-persist/storage')`, unless you use an absolute path
+* added `storage.<span class="apidocCodeKeywordSpan">get</span>()`, alias to `getItem()`
+* added `storage.set()`, alias to `setItem()`
+* added `storage.del()`, `storage.rm()`, as aliases to `removeItem()`
+* Keys, on the file system are base64 encoded with the replacement of the `/`
+
+## API Documentation
+
+#### `init(options, [callback])` - asynchronous*, returns Promise
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.getItem" id="apidoc.element.node-persist.local_storage.prototype.getItem">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>getItem
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getItem = function (key, callback) {
+    callback = isFunction(callback) ? callback : noop;
+    var deferred = Q.defer();
+
+    if (this.isExpired(key)) {
+        this.log(key + ' has expired');
+        if (this.options.interval || !this.options.continuous) {
+            callback(null, null);
+            return deferred.resolve(null);
+        }
+        return this.removeItem(key).then(function() {
+            callback(null, null);
+            return null;
+        }, callback);
+    } else {
+        callback(null, this.data[key] &amp;&amp; this.data[key].value);
+        deferred.resolve(this.data[key] &amp;&amp; this.data[key].value);
+    }
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+//you must first call storage.init
+
+storage.init( /* options ... */ ).then(function() {
+  //then start using it
+  storage.setItem('name','yourname')
+  .then(function() {
+
+    return storage.<span class="apidocCodeKeywordSpan">getItem</span>('name')
+  })
+  .then(function(value) {
+
+    console.log(value); // yourname
+  })
+});
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.getItemSync" id="apidoc.element.node-persist.local_storage.prototype.getItemSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>getItemSync
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getItemSync = function (key) {
+    if (this.isExpired(key)) {
+        this.removeItemSync(key);
+    } else {
+        return this.data[key] &amp;&amp; this.data[key].value;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+Sync example
+```
+//you must first call storage.initSync
+storage.initSync();
+
+//then start using it
+storage.setItemSync('name','yourname');
+console.log(storage.<span class="apidocCodeKeywordSpan">getItemSync</span>('name')); // yourname
+
+```
+
+## Run the examples:
+
+```sh
+$ cd examples/examplename
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.init" id="apidoc.element.node-persist.local_storage.prototype.init">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>init
+        <span class="apidocSignatureSpan">(userOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (userOptions, callback) {
+    if (isFunction(userOptions)) {
+        callback = userOptions;
+        userOptions = null;
+    }
+    if (userOptions) {
+        this.setOptions(userOptions);
+    }
+    callback = isFunction(callback) ? callback : noop;
+
+    var deferred = Q.defer();
+    var deferreds = [];
+
+    var options = this.options;
+
+    var result = {dir: options.dir};
+    deferreds.push(this.parseStorageDir());
+
+    //start persisting
+    if (options.interval &amp;&amp; options.interval &gt; 0) {
+        this.startPersistInterval(this.persist.bind(this));
+    }
+
+    if (options.expiredInterval) {
+        this.startExpiredKeysInterval();
+    }
+
+    Q.all(deferreds).then(
+        function() {
+            deferred.resolve(result);
+            callback(null, result);
+        },
+        function(err) {
+            deferred.reject(err);
+            callback(err);
+        });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Basic Example
+
+Async example
+```js
+//you must first call storage.init
+
+storage.<span class="apidocCodeKeywordSpan">init</span>( /* options ... */ ).then(function() {
+//then start using it
+storage.setItem('name','yourname')
+.then(function() {
+
+  return storage.getItem('name')
+})
+.then(function(value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.initSync" id="apidoc.element.node-persist.local_storage.prototype.initSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>initSync
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initSync = function (userOptions) {
+    if (userOptions) {
+        this.setOptions(userOptions);
+    }
+
+    var options = this.options;
+
+    if (options.logging) {
+        this.log("options:");
+        this.log(this.stringify(options));
+    }
+
+    this.parseStorageDirSync();
+    if (options.expiredInterval) {
+        this.startExpiredKeysInterval();
+    }
+    //start synchronous persisting,
+    if (options.interval &amp;&amp; options.interval &gt; 0) {
+        this._persistInterval = setInterval(this.persistSync.bind(this), options.interval);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+```
+
+Sync example
+```
+//you must first call storage.initSync
+storage.<span class="apidocCodeKeywordSpan">initSync</span>();
+
+//then start using it
+storage.setItemSync('name','yourname');
+console.log(storage.getItemSync('name')); // yourname
+
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.isExpired" id="apidoc.element.node-persist.local_storage.prototype.isExpired">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>isExpired
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isExpired = function (key) {
+    return this.data[key] &amp;&amp; this.data[key].ttl &amp;&amp; this.data[key].ttl &lt; (new Date()).getTime();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+return this.getItem(key, callback);
+    },
+
+    getItem: function (key, callback) {
+callback = isFunction(callback) ? callback : noop;
+var deferred = Q.defer();
+
+if (this.<span class="apidocCodeKeywordSpan">isExpired</span>(key)) {
+    this.log(key + ' has expired');
+    if (this.options.interval || !this.options.continuous) {
+        callback(null, null);
+        return deferred.resolve(null);
+    }
+    return this.removeItem(key).then(function() {
+        callback(null, null);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.keys" id="apidoc.element.node-persist.local_storage.prototype.keys">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>keys
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">keys = function () {
+    return Object.keys(this.data);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    //start synchronous persisting,
+    if (options.interval &amp;&amp; options.interval &gt; 0) {
+        this._persistInterval = setInterval(this.persistSync.bind(this), options.interval);
+    }
+},
+
+keys: function () {
+    return Object.<span class="apidocCodeKeywordSpan">keys</span>(this.data);
+},
+
+length: function () {
+    return this.keys().length;
+},
+
+forEach: function(callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.length" id="apidoc.element.node-persist.local_storage.prototype.length">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>length
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">length = function () {
+    return this.keys().length;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.log" id="apidoc.element.node-persist.local_storage.prototype.log">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>log
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">log = function () {
+    this.options &amp;&amp; this.options.logging &amp;&amp; console.log.apply(console, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  storage.setItem('name','yourname')
+  .then(function() {
+
+    return storage.getItem('name')
+  })
+  .then(function(value) {
+
+    console.<span class="apidocCodeKeywordSpan">log</span>(value); // yourname
+  })
+});
+
+```
+
+Sync example
+```
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.md5" id="apidoc.element.node-persist.local_storage.prototype.md5">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>md5
+        <span class="apidocSignatureSpan">(data)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">md5 = function (data) {
+    return crypto.createHash('md5').update(data).digest("hex");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.parse" id="apidoc.element.node-persist.local_storage.prototype.parse">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parse
+        <span class="apidocSignatureSpan">(str)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parse = function (str){
+    try {
+        return this.options.parse(str);
+    } catch(e) {
+        this.log("parse error: ", this.stringify(e));
+        return undefined;
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+stringify: function (obj) {
+    return this.options.stringify(obj);
+},
+
+parse: function(str){
+    try {
+        return this.options.<span class="apidocCodeKeywordSpan">parse</span>(str);
+    } catch(e) {
+        this.log("parse error: ", this.stringify(e));
+        return undefined;
+    }
+},
+
+parseStorageDir: function(callback) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.parseFile" id="apidoc.element.node-persist.local_storage.prototype.parseFile">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseFile
+        <span class="apidocSignatureSpan">(filename, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFile = function (filename, callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var deferred = Q.defer();
+    var self = this;
+    var options = this.options;
+    var dir = this.options.dir;
+    var file = path.join(dir, filename);
+
+    var error = function (err) {
+        deferred.reject(err);
+        return callback(err);
+    };
+
+    var done = function (input) {
+        deferred.resolve(input);
+        callback(null, input);
+    };
+
+    fs.readFile(file, options.encoding, function (err, text) {
+        if (err) {
+            return error(err);
+        }
+        var input = self.parse(text);
+        if (!isValidStorageFileContent(input)) {
+            return options.forgiveParseErrors ? done() : error(new Error('[PARSE-ERROR] ' + file + ' does not look like a valid
+storage file!'));
+        }
+        self.data[input.key] = input;
+        self.log("loaded: " + dir + "/" + input.key);
+        done(input);
+    });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    deferred.reject(err);
+    callback(err);
+}
+
+for (var i in arr) {
+    var currentFile = arr[i];
+    if (currentFile[0] !== '.') {
+        deferreds.push(self.<span class="apidocCodeKeywordSpan">parseFile</span>(currentFile));
+    }
+}
+
+Q.all(deferreds).then(
+    function() {
+        deferred.resolve(result);
+        callback(null, result);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.parseFileSync" id="apidoc.element.node-persist.local_storage.prototype.parseFileSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseFileSync
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseFileSync = function (filename) {
+    var dir = this.options.dir;
+    var file = path.join(dir, filename);
+    var input = this.parse(fs.readFileSync(file, this.options.encoding));
+    if (!isValidStorageFileContent(input)) {
+        if (this.options.forgiveParseErrors) {
+            return;
+        }
+        throw Error('[PARSE-ERROR] ' + file + ' does not look like a valid storage file!');
+    }
+    this.data[input.key] = input;
+    this.log("loaded: " + dir + "/" + input.key);
+    return this.data[input.key];
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    var exists = fs.existsSync(dir);
+
+    if (exists) { //load data
+        var arr = fs.readdirSync(dir);
+        for (var i = 0; i &lt; arr.length; i++) {
+            var currentFile = arr[i];
+            if (arr[i] &amp;&amp; currentFile[0] !== '.') {
+                this.<span class="apidocCodeKeywordSpan">parseFileSync</span>(currentFile);
+            }
+        }
+    } else { //create the directory
+        mkdirp.sync(dir);
+    }
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.parseStorageDir" id="apidoc.element.node-persist.local_storage.prototype.parseStorageDir">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseStorageDir
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseStorageDir = function (callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var deferred = Q.defer();
+    var deferreds = [];
+
+    var dir = this.options.dir;
+    var self = this;
+    var result = {dir: dir};
+
+    //check to see if dir is present
+    fs.exists(dir, function (exists) {
+        if (exists) {
+            //load data
+            fs.readdir(dir, function (err, arr) {
+                if (err) {
+                    deferred.reject(err);
+                    callback(err);
+                }
+
+                for (var i in arr) {
+                    var currentFile = arr[i];
+                    if (currentFile[0] !== '.') {
+                        deferreds.push(self.parseFile(currentFile));
+                    }
+                }
+
+                Q.all(deferreds).then(
+                    function() {
+                        deferred.resolve(result);
+                        callback(null, result);
+                    },
+                    function(err) {
+                        deferred.reject(err);
+                        callback(err);
+                    });
+            });
+        } else {
+            //create the directory
+            mkdirp(dir, function (err) {
+                if (err) {
+                    console.error(err);
+                    deferred.reject(err);
+                    callback(err);
+                } else {
+                    self.log('created ' + dir);
+                    deferred.resolve(result);
+                    callback(null, result);
+                }
+            });
+        }
+    });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var deferred = Q.defer();
+var deferreds = [];
+
+var options = this.options;
+
+var result = {dir: options.dir};
+deferreds.push(this.<span class="apidocCodeKeywordSpan">parseStorageDir</span>());
+
+//start persisting
+if (options.interval &amp;&amp; options.interval &gt; 0) {
+    this.startPersistInterval(this.persist.bind(this));
+}
+
+if (options.expiredInterval) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.parseStorageDirSync" id="apidoc.element.node-persist.local_storage.prototype.parseStorageDirSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>parseStorageDirSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseStorageDirSync = function () {
+    var dir = this.options.dir;
+    var exists = fs.existsSync(dir);
+
+    if (exists) { //load data
+        var arr = fs.readdirSync(dir);
+        for (var i = 0; i &lt; arr.length; i++) {
+            var currentFile = arr[i];
+            if (arr[i] &amp;&amp; currentFile[0] !== '.') {
+                this.parseFileSync(currentFile);
+            }
+        }
+    } else { //create the directory
+        mkdirp.sync(dir);
+    }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var options = this.options;
+
+if (options.logging) {
+    this.log("options:");
+    this.log(this.stringify(options));
+}
+
+this.<span class="apidocCodeKeywordSpan">parseStorageDirSync</span>();
+if (options.expiredInterval) {
+    this.startExpiredKeysInterval();
+}
+//start synchronous persisting,
+if (options.interval &amp;&amp; options.interval &gt; 0) {
+    this._persistInterval = setInterval(this.persistSync.bind(this), options.interval);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.persist" id="apidoc.element.node-persist.local_storage.prototype.persist">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persist
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">persist = function (callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var deferred = Q.defer();
+    var result;
+    var deferreds = [];
+
+    for (var key in this.data) {
+        if (this.changes[key]) {
+            deferreds.push(this.persistKey(key));
+        }
+    }
+
+    Q.all(deferreds).then(
+        function(result) {
+            deferred.resolve(result);
+            callback(null, result);
+            this.log('persist done');
+        }.bind(this),
+        function(err) {
+            deferred.reject(result);
+            callback(err);
+        });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Fine-grained control
+Make sure you set `continuous:false` in the `options` hash, and you don't set an `interval`
+
+#### `persist([callback])` - asynchronous, returns Promise
+These function can be used to manually persist the database
+```js
+storage.<span class="apidocCodeKeywordSpan">persist</span>( /* optional callback */ function(err) {
+    // when done
+}).then(onSuccess, onError); // or you can use the promise
+```
+#### `persistSync()` - synchronous, throws Error on failure
+like `persist()` but synchronous
+```js
+storage.persistSync();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.persistKey" id="apidoc.element.node-persist.local_storage.prototype.persistKey">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persistKey
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">persistKey = function (key, callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var self = this;
+    var options = this.options;
+    var file = path.join(options.dir, md5(key));
+
+    var deferred = Q.defer();
+    var output = {key: key, value: this.data[key] &amp;&amp; this.data[key].value, ttl: this.data[key] &amp;&amp; this.data[key].ttl};
+
+    fs.writeFile(file, this.stringify(output), options.encoding, function(err) {
+        if (err) {
+            self.changes[key] &amp;&amp; self.changes[key].onError &amp;&amp; self.changes[key].onError(err);
+            deferred.reject(err);
+            return callback(err);
+        }
+
+        self.changes[key] &amp;&amp; self.changes[key].onSuccess &amp;&amp; self.changes[key].onSuccess();
+        delete self.changes[key];
+        deferred.resolve(output);
+        callback(null, output);
+        self.log("wrote: " + key);
+    });
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+##### note:
+Both `persist()`, `persistSync()`, `persistKey()`, and `persistKeySync()` will automatically persist the ttl keys/values in the
+persistance process
+
+#### `persistKey(key, [callback])` - asynchronous, returns Promise
+This function manually persist a 'key' within the database
+```js
+storage.setItem('name','myname');
+storage.<span class="apidocCodeKeywordSpan">persistKey</span>('name', /* optional callback */ function(err) {
+    // when done
+}).then(onSuccess, onError); // or you can use the promise
+```
+
+#### `persistKeySync(key)`
+like `persistKey()` but synchronous
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.persistKeySync" id="apidoc.element.node-persist.local_storage.prototype.persistKeySync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persistKeySync
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">persistKeySync = function (key) {
+    var options = this.options;
+    var file = path.join(options.dir, md5(key));
+
+    var output = {key: key, value: this.data[key] &amp;&amp; this.data[key].value, ttl: this.data[key] &amp;&amp; this.data[key].ttl};
+    try {
+        fs.writeFileSync(file, this.stringify(output));
+        this.changes[key] &amp;&amp; this.changes[key].onSuccess &amp;&amp; this.changes[key].onSuccess();
+    } catch (err) {
+        this.changes[key] &amp;&amp; this.changes[key].onError &amp;&amp; this.changes[key].onError(err);
+        throw err;
+    }
+    delete this.changes[key];
+    this.log("wrote: " + key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+}).then(onSuccess, onError); // or you can use the promise
+```
+
+#### `persistKeySync(key)`
+like `persistKey()` but synchronous
+```js
+storage.setItem('name','myname');
+storage.<span class="apidocCodeKeywordSpan">persistKeySync</span>('name');
+```
+
+### Factory method
+
+#### `create(options)` - synchronous, static method
+
+If you choose to create multiple instances of storage, you can. Just avoid using the same `dir` for the storage location.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.persistSync" id="apidoc.element.node-persist.local_storage.prototype.persistSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>persistSync
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">persistSync = function () {
+    for (var key in this.data) {
+        if (this.changes[key]) {
+            this.persistKeySync(key);
+        }
+    }
+    this.log('persistSync done');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+storage.persist( /* optional callback */ function(err) {
+    // when done
+}).then(onSuccess, onError); // or you can use the promise
+```
+#### `persistSync()` - synchronous, throws Error on failure
+like `persist()` but synchronous
+```js
+storage.<span class="apidocCodeKeywordSpan">persistSync</span>();
+```
+##### note:
+Both `persist()`, `persistSync()`, `persistKey()`, and `persistKeySync()` will automatically persist the ttl keys/values in the
+persistance process
+
+#### `persistKey(key, [callback])` - asynchronous, returns Promise
+This function manually persist a 'key' within the database
+```js
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.removeExpiredItems" id="apidoc.element.node-persist.local_storage.prototype.removeExpiredItems">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removeExpiredItems
+        <span class="apidocSignatureSpan">(callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeExpiredItems = function (callback) {
+    callback = isFunction(callback) ? callback : noop;
+    var deferred = Q.defer();
+    var deferreds = [];
+
+    var keys = this.keys();
+    for (var i = 0; i &lt; keys.length; i++) {
+        if (this.isExpired(keys[i])) {
+            deferreds.push(this.removeItem(keys[i]));
+        }
+    }
+    Q.all(deferreds).then(
+        function() {
+            deferred.resolve();
+            callback();
+        },
+        function(err) {
+            deferred.reject(err);
+            callback(err);
+        });
+
+    return deferred.promise;
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.removeItem" id="apidoc.element.node-persist.local_storage.prototype.removeItem">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removeItem
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeItem = function (key, callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var deferred = Q.defer();
+    var deferreds = [];
+
+    deferreds.push(this.removePersistedKey(key));
+
+    Q.all(deferreds).then(
+        function() {
+            var value = this.data[key] &amp;&amp; this.data[key].value;
+            delete this.data[key];
+            this.log('removed: ' + key);
+            callback(null, value);
+            deferred.resolve(value);
+        }.bind(this),
+        function(err) {
+            callback(err);
+            deferred.reject(err);
+        }
+    );
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+storage.setItemSync('foo', 'bar');
+storage.setItemSync('hello', 'world', {ttl: 1000 * 60 /* ttl 1 minute */})
+```
+#### `removeItem(key, [callback])` - asynchronous, returns Promise
+This function removes key in the database if it is present, and immediately deletes it from the file system asynchronously. If ttl
+ is used, the corrresponding ttl-key is removed as well
+
+```js
+storage.<span class="apidocCodeKeywordSpan">removeItem</span>('me', /* optional callback */ function(err) {
+  // done
+}).then(onSuccess, onError); // or use the promise
+```
+#### `removeItemSync(key)` - synchronous,  throws Error on failure
+just like removeItem, but synchronous
+```js
+storage.removeItemSync('me');
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.removeItemSync" id="apidoc.element.node-persist.local_storage.prototype.removeItemSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removeItemSync
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removeItemSync = function (key) {
+    var value = this.data[key] &amp;&amp; this.data[key].value;
+    this.removePersistedKeySync(key);
+    delete this.data[key];
+    this.log('removed: ' + key);
+    return value;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+storage.removeItem('me', /* optional callback */ function(err) {
+  // done
+}).then(onSuccess, onError); // or use the promise
+```
+#### `removeItemSync(key)` - synchronous,  throws Error on failure
+just like removeItem, but synchronous
+```js
+storage.<span class="apidocCodeKeywordSpan">removeItemSync</span>('me');
+```
+#### `clear([callback])` - asynchronous, returns Promise
+This function removes all keys in the database, and immediately deletes all keys from the file system asynchronously.
+#### `clearSync()` - synchronous, throws Error on failure
+like `clear()` but synchronous
+
+#### `values()` -  synchronous, returns array
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.removePersistedKey" id="apidoc.element.node-persist.local_storage.prototype.removePersistedKey">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removePersistedKey
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removePersistedKey = function (key, callback) {
+    callback = isFunction(callback) ? callback : noop;
+
+    var options = this.options;
+    var deferred = Q.defer();
+    var result;
+
+    //check to see if key has been persisted
+    var file = path.join(options.dir, md5(key));
+    fs.exists(file, function (exists) {
+        if (exists) {
+            fs.unlink(file, function (err) {
+                result = {key: key, removed: !err, existed: exists};
+                if (err &amp;&amp; err.code != 'ENOENT') {<span class="apidocCodeCommentSpan"> /* Only throw the error if the error is something else */
+</span>                    deferred.reject(err);
+                    return callback(err);
+                }
+                err &amp;&amp; this.log('Failed to remove file:' + file + ' because it doesn\'t exist anymore.');
+                deferred.resolve(result);
+                callback(null, result);
+            }.bind(this));
+        } else {
+            result = {key: key, removed: false, existed: exists};
+            deferred.resolve(result);
+            callback(null, result);
+        }
+    }.bind(this));
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    removeItem: function (key, callback) {
+callback = isFunction(callback) ? callback : noop;
+
+var deferred = Q.defer();
+var deferreds = [];
+
+deferreds.push(this.<span class="apidocCodeKeywordSpan">removePersistedKey</span>(key));
+
+Q.all(deferreds).then(
+    function() {
+        var value = this.data[key] &amp;&amp; this.data[key].value;
+        delete this.data[key];
+        this.log('removed: ' + key);
+        callback(null, value);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.removePersistedKeySync" id="apidoc.element.node-persist.local_storage.prototype.removePersistedKeySync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>removePersistedKeySync
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">removePersistedKeySync = function (key) {
+    var options = this.options;
+    var file = path.join(options.dir, md5(key));
+    if (fs.existsSync(file)) {
+        try {
+            fs.unlinkSync(file);
+        } catch (err) {
+            if (err.code != 'ENOENT') {<span class="apidocCodeCommentSpan"> /* Only throw the error if the error is something else */
+</span>                throw err;
+            }
+            this.log('Failed to remove file:' + file + ' because it doesn\'t exist anymore.');
+        }
+        return {key: key, removed: true, existed: true};
+    }
+    return {key: key, removed: false, existed: false};
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        }
+    );
+    return deferred.promise;
+},
+
+removeItemSync: function (key) {
+    var value = this.data[key] &amp;&amp; this.data[key].value;
+    this.<span class="apidocCodeKeywordSpan">removePersistedKeySync</span>(key);
+    delete this.data[key];
+    this.log('removed: ' + key);
+    return value;
+},
+
+removeExpiredItems: function (callback) {
+    callback = isFunction(callback) ? callback : noop;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.resolveDir" id="apidoc.element.node-persist.local_storage.prototype.resolveDir">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>resolveDir
+        <span class="apidocSignatureSpan">(dir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">resolveDir = function (dir) {
+    dir = path.normalize(dir);
+    if (path.isAbsolute(dir)) {
+        return dir;
+    }
+    return path.join(process.cwd(), dir);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+        if (userOptions.hasOwnProperty(key)) {
+            options[key] = userOptions[key];
+        } else {
+            options[key] = defaults[key];
+        }
+    }
+
+    options.dir = this.<span class="apidocCodeKeywordSpan">resolveDir</span>(options.dir);
+    options.ttl = options.ttl ? isNumber(options.ttl) &amp;&amp; options.ttl &gt; 0 ? options.ttl : defaultTTL : false;
+}
+
+// Check to see if we received an external logging function
+if (isFunction(options.logging)) {
+    // Overwrite log function with external logging function
+    this.log = options.logging;
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.rm" id="apidoc.element.node-persist.local_storage.prototype.rm">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>rm
+        <span class="apidocSignatureSpan">(key, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">rm = function (key, callback) {
+    return this.removeItem(key, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* `storage.getItem()` now returns a promise
+* `storage.valuesWithKeyMatch()` no longer accepts a callback
+* `storage.values()` no longer accepts a callback
+* `storage.key()` is gone
+* The default `dir` is now `process.cwd() + (dir || '.node-persist/storage')`, unless you use an absolute path
+* added `storage.get()`, alias to `getItem()`
+* added `storage.set()`, alias to `setItem()`
+* added `storage.del()`, `storage.<span class="apidocCodeKeywordSpan">rm</span>()`, as aliases to `removeItem()`
+* Keys, on the file system are base64 encoded with the replacement of the `/`
+
+## API Documentation
+
+#### `init(options, [callback])` - asynchronous*, returns Promise
+This function reads what's on disk and loads it into memory, if the storage dir is new, it will create it
+##### Options
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.set" id="apidoc.element.node-persist.local_storage.prototype.set">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>set
+        <span class="apidocSignatureSpan">(key, value, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">set = function (key, value, options, callback) {
+    return this.setItem(key, value, options, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+* `storage.getItem()` now returns a promise
+* `storage.valuesWithKeyMatch()` no longer accepts a callback
+* `storage.values()` no longer accepts a callback
+* `storage.key()` is gone
+* The default `dir` is now `process.cwd() + (dir || '.node-persist/storage')`, unless you use an absolute path
+* added `storage.get()`, alias to `getItem()`
+* added `storage.<span class="apidocCodeKeywordSpan">set</span>()`, alias to `setItem()`
+* added `storage.del()`, `storage.rm()`, as aliases to `removeItem()`
+* Keys, on the file system are base64 encoded with the replacement of the `/`
+
+## API Documentation
+
+#### `init(options, [callback])` - asynchronous*, returns Promise
+This function reads what's on disk and loads it into memory, if the storage dir is new, it will create it
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.setItem" id="apidoc.element.node-persist.local_storage.prototype.setItem">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>setItem
+        <span class="apidocSignatureSpan">(key, value, options, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setItem = function (key, value, options, callback) {
+    if (typeof options == 'function') {
+        callback = options;
+        options = null;
+    }
+    options = options || {};
+    callback = isFunction(callback) ? callback : noop;
+
+    var logmsg = "set (" + key + ": " + this.stringify(value) + ")";
+
+    var deferred = Q.defer();
+    var deferreds = [];
+
+    // ttl is different that the other options because we can pass a different for each setItem, as well as have a default one.
+    var ttl = this.calcTTL(options.ttl);
+    this.data[key] = {value: value, ttl: ttl};
+
+    var instanceOptions = this.options;
+    var result = {key: key, value: value, ttl: ttl, queued: !!instanceOptions.interval, manual: !instanceOptions.interval &amp;&amp; !instanceOptions
+.continuous};
+
+    var onSuccess = function () {
+        callback(null, result);
+        deferred.resolve(result);
+    };
+
+    var onError = function (err) {
+        callback(err);
+        deferred.reject(err);
+    };
+
+    this.log(logmsg);
+
+    if (instanceOptions.interval || !instanceOptions.continuous) {
+        this.changes[key] = {onSuccess: onSuccess, onError: onError};
+    } else {
+        deferreds.push(this.persistKey(key));
+
+        Q.all(deferreds).then(
+            function(result) {
+                deferred.resolve(result);
+                callback(null, result);
+            }.bind(this),
+            function(err) {
+                deferred.reject(err);
+                callback(err);
+            });
+    }
+
+    return deferred.promise;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Async example
+```js
+//you must first call storage.init
+
+storage.init( /* options ... */ ).then(function() {
+  //then start using it
+  storage.<span class="apidocCodeKeywordSpan">setItem</span>('name','yourname')
+  .then(function() {
+
+return storage.getItem('name')
+  })
+  .then(function(value) {
+
+console.log(value); // yourname
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.setItemSync" id="apidoc.element.node-persist.local_storage.prototype.setItemSync">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>setItemSync
+        <span class="apidocSignatureSpan">(key, value, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setItemSync = function (key, value, options) {
+    options = options || {};
+    var ttl = this.calcTTL(options.ttl);
+    this.data[key] = {key: key, value: value, ttl: ttl};
+    this.persistKeySync(key);
+    this.log("set (" + key + ": " + this.stringify(value) + ")");
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+Sync example
+```
+//you must first call storage.initSync
+storage.initSync();
+
+//then start using it
+storage.<span class="apidocCodeKeywordSpan">setItemSync</span>('name','yourname');
+console.log(storage.getItemSync('name')); // yourname
+
+```
+
+## Run the examples:
+
+```sh
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.setOptions" id="apidoc.element.node-persist.local_storage.prototype.setOptions">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>setOptions
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">setOptions = function (userOptions) {
+    var options = {};
+
+    if (!userOptions) {
+        options = defaults;
+    } else {
+        for (var key in defaults) {
+            if (userOptions.hasOwnProperty(key)) {
+                options[key] = userOptions[key];
+            } else {
+                options[key] = defaults[key];
+            }
+        }
+
+        options.dir = this.resolveDir(options.dir);
+        options.ttl = options.ttl ? isNumber(options.ttl) &amp;&amp; options.ttl &gt; 0 ? options.ttl : defaultTTL : false;
+    }
+
+    // Check to see if we received an external logging function
+    if (isFunction(options.logging)) {
+        // Overwrite log function with external logging function
+        this.log = options.logging;
+        options.logging = true;
+    }
+
+    this.options = options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var LocalStorage = function (userOptions) {
+    if(!(this instanceof LocalStorage)) {
+        return new LocalStorage(userOptions);
+    }
+    this.data = {};
+    this.changes = {};
+    this.<span class="apidocCodeKeywordSpan">setOptions</span>(userOptions);
+
+    // we don't call init in the constructor because we can only do so for the initSync
+    // for init async, it returns a promise, and in order to maintain that API, we cannot return the promise in the constructor
+    // so init must be called, separately, on the instance of new LocalStorage();
+};
+
+LocalStorage.prototype = {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.startExpiredKeysInterval" id="apidoc.element.node-persist.local_storage.prototype.startExpiredKeysInterval">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>startExpiredKeysInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startExpiredKeysInterval = function () {
+    this.stopExpiredKeysInterval();
+    this._expiredKeysInterval = setInterval(this.removeExpiredItems.bind(this), this.options.expiredInterval);
+    this._expiredKeysInterval.unref();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+//start persisting
+if (options.interval &amp;&amp; options.interval &gt; 0) {
+    this.startPersistInterval(this.persist.bind(this));
+}
+
+if (options.expiredInterval) {
+    this.<span class="apidocCodeKeywordSpan">startExpiredKeysInterval</span>();
+}
+
+Q.all(deferreds).then(
+    function() {
+        deferred.resolve(result);
+        callback(null, result);
+    },
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.startPersistInterval" id="apidoc.element.node-persist.local_storage.prototype.startPersistInterval">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>startPersistInterval
+        <span class="apidocSignatureSpan">(persistFunction)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">startPersistInterval = function (persistFunction) {
+    this.stopPersistInterval();
+    this._persistInterval = setInterval(persistFunction || this.persist.bind(this), this.options.interval);
+    this._persistInterval.unref();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var options = this.options;
+
+var result = {dir: options.dir};
+deferreds.push(this.parseStorageDir());
+
+//start persisting
+if (options.interval &amp;&amp; options.interval &gt; 0) {
+    this.<span class="apidocCodeKeywordSpan">startPersistInterval</span>(this.persist.bind(this));
+}
+
+if (options.expiredInterval) {
+    this.startExpiredKeysInterval();
+}
+
+Q.all(deferreds).then(
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.stopExpiredKeysInterval" id="apidoc.element.node-persist.local_storage.prototype.stopExpiredKeysInterval">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>stopExpiredKeysInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopExpiredKeysInterval = function () {
+    clearInterval(this._expiredKeysInterval);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+},
+
+stopPersistInterval: function () {
+    clearInterval(this._persistInterval);
+},
+
+startExpiredKeysInterval: function () {
+    this.<span class="apidocCodeKeywordSpan">stopExpiredKeysInterval</span>();
+    this._expiredKeysInterval = setInterval(this.removeExpiredItems.bind(this), this.options.expiredInterval);
+    this._expiredKeysInterval.unref();
+},
+
+stopExpiredKeysInterval: function () {
+    clearInterval(this._expiredKeysInterval);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.stopPersistInterval" id="apidoc.element.node-persist.local_storage.prototype.stopPersistInterval">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>stopPersistInterval
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stopPersistInterval = function () {
+    clearInterval(this._persistInterval);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    if (path.isAbsolute(dir)) {
+        return dir;
+    }
+    return path.join(process.cwd(), dir);
+},
+
+startPersistInterval: function (persistFunction) {
+    this.<span class="apidocCodeKeywordSpan">stopPersistInterval</span>();
+    this._persistInterval = setInterval(persistFunction || this.persist.bind(this), this.options.interval);
+    this._persistInterval.unref();
+},
+
+stopPersistInterval: function () {
+    clearInterval(this._persistInterval);
+},
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.stringify" id="apidoc.element.node-persist.local_storage.prototype.stringify">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>stringify
+        <span class="apidocSignatureSpan">(obj)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stringify = function (obj) {
+    return this.options.stringify(obj);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    this.setOptions(userOptions);
+}
+
+var options = this.options;
+
+if (options.logging) {
+    this.log("options:");
+    this.log(this.<span class="apidocCodeKeywordSpan">stringify</span>(options));
+}
+
+this.parseStorageDirSync();
+if (options.expiredInterval) {
+    this.startExpiredKeysInterval();
+}
+//start synchronous persisting,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.values" id="apidoc.element.node-persist.local_storage.prototype.values">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>values
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">values = function () {
+    return this.keys().map(function(k) {
+        return this.data[k].value;
+    }.bind(this));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## 1.0.0 change logs
+
+Mostly non-backward changes
+
+* `storage.getItem()` now returns a promise
+* `storage.valuesWithKeyMatch()` no longer accepts a callback
+* `storage.<span class="apidocCodeKeywordSpan">values</span>()` no longer accepts a callback
+* `storage.key()` is gone
+* The default `dir` is now `process.cwd() + (dir || '.node-persist/storage')`, unless you use an absolute path
+* added `storage.get()`, alias to `getItem()`
+* added `storage.set()`, alias to `setItem()`
+* added `storage.del()`, `storage.rm()`, as aliases to `removeItem()`
+* Keys, on the file system are base64 encoded with the replacement of the `/`
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.local_storage.prototype.valuesWithKeyMatch" id="apidoc.element.node-persist.local_storage.prototype.valuesWithKeyMatch">
+        function <span class="apidocSignatureSpan">node-persist.local_storage.prototype.</span>valuesWithKeyMatch
+        <span class="apidocSignatureSpan">(match)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">valuesWithKeyMatch = function (match) {
+    match = match || /.*/;
+
+    var filter = match instanceof RegExp ?
+        function(key) {
+            return match.test(key);
+        } :
+        function(key) {
+            return key.indexOf(match) !== -1;
+        };
+
+    var values = [];
+    this.keys().forEach(function(k) {
+        if (filter(k)) {
+            values.push(this.data[k].value);
+        }
+    }.bind(this));
+
+    return values;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* added `forgiveParseErrors` option
+
+## 1.0.0 change logs
+
+Mostly non-backward changes
+
+* `storage.getItem()` now returns a promise
+* `storage.<span class="apidocCodeKeywordSpan">valuesWithKeyMatch</span>()` no longer accepts a callback
+* `storage.values()` no longer accepts a callback
+* `storage.key()` is gone
+* The default `dir` is now `process.cwd() + (dir || '.node-persist/storage')`, unless you use an absolute path
+* added `storage.get()`, alias to `getItem()`
+* added `storage.set()`, alias to `setItem()`
+* added `storage.del()`, `storage.rm()`, as aliases to `removeItem()`
+* Keys, on the file system are base64 encoded with the replacement of the `/`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
