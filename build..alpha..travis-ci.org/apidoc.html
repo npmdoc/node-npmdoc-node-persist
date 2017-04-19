@@ -103,6 +103,12 @@
 
         </li>
 
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-persist.</span>node_persist</span>
+
+        </li>
+
     </ol></li>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.node-persist.local_storage">module node-persist.local_storage</a><ol>
@@ -500,6 +506,37 @@
 
     </ol></li>
 
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-persist.node_persist">module node-persist.node_persist</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.node_persist.create">
+            function <span class="apidocSignatureSpan">node-persist.node_persist.</span>create
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.node_persist.init">
+            function <span class="apidocSignatureSpan">node-persist.node_persist.</span>init
+            <span class="apidocSignatureSpan">(userOptions, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-persist.node_persist.initSync">
+            function <span class="apidocSignatureSpan">node-persist.node_persist.</span>initSync
+            <span class="apidocSignatureSpan">(userOptions)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
 </ol></div>
 
 <div class="apidocSectionDiv">
@@ -626,6 +663,8 @@ console.log(storage.getItemSync(&#x27;name&#x27;)); // yourname
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
+
+
 
 
 
@@ -2355,6 +2394,110 @@ Mostly non-backward changes
 * added `storage.set()`, alias to `setItem()`
 * added `storage.del()`, `storage.rm()`, as aliases to `removeItem()`
 * Keys, on the file system are base64 encoded with the replacement of the `/`
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-persist.node_persist" id="apidoc.module.node-persist.node_persist">module node-persist.node_persist</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.node_persist.create" id="apidoc.element.node-persist.node_persist.create">
+        function <span class="apidocSignatureSpan">node-persist.node_persist.</span>create
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">create = function (userOptions) {
+    return LocalStorage(userOptions);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+If you choose to create multiple instances of storage, you can. Just avoid using the same `dir` for the storage location.
+__You still have to call `init` or `initSync` after `create`__ - you can pass your configs to either `create` or `init/Sync`
+
+The reason we don&#x27;t call `init` in the constructor (or when you `create`) because we can only do so for the `initSync` version
+, the async `init` returns a promise, and in order to maintain that API, we cannot return the promise in the constructor, so `init
+` must be called on the instance of new LocalStorage();
+
+```javascript
+var storage = require(&#x27;node-persist&#x27;);
+var myStorage = storage.<span class="apidocCodeKeywordSpan">create</span>({dir: &#x27;myDir&#x27;, ttl: 3000});
+myStorage.init().then(function() { // or you can use initSync()
+   // ...
+});
+```
+
+### Contributing
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.node_persist.init" id="apidoc.element.node-persist.node_persist.init">
+        function <span class="apidocSignatureSpan">node-persist.node_persist.</span>init
+        <span class="apidocSignatureSpan">(userOptions, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">init = function (userOptions, callback) {
+    localStorage = nodePersist.defaultInstance = nodePersist.create(userOptions);
+    var ret = localStorage.init(callback);
+    mixin(nodePersist, localStorage, {skip: [&#x27;init&#x27;, &#x27;initSync&#x27;, &#x27;create&#x27;]});
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+## Basic Example
+
+Async example
+```js
+//you must first call storage.init
+
+storage.<span class="apidocCodeKeywordSpan">init</span>( /* options ... */ ).then(function() {
+//then start using it
+storage.setItem(&#x27;name&#x27;,&#x27;yourname&#x27;)
+.then(function() {
+
+  return storage.getItem(&#x27;name&#x27;)
+})
+.then(function(value) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-persist.node_persist.initSync" id="apidoc.element.node-persist.node_persist.initSync">
+        function <span class="apidocSignatureSpan">node-persist.node_persist.</span>initSync
+        <span class="apidocSignatureSpan">(userOptions)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">initSync = function (userOptions) {
+    localStorage = nodePersist.defaultInstance = nodePersist.create(userOptions);
+    var ret = localStorage.initSync();
+    mixin(nodePersist, localStorage, {skip: [&#x27;init&#x27;, &#x27;initSync&#x27;, &#x27;create&#x27;]});
+    return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+
+```
+
+Sync example
+```
+//you must first call storage.initSync
+storage.<span class="apidocCodeKeywordSpan">initSync</span>();
+
+//then start using it
+storage.setItemSync(&#x27;name&#x27;,&#x27;yourname&#x27;);
+console.log(storage.getItemSync(&#x27;name&#x27;)); // yourname
+
+```
 ...</pre></li>
     </ul>
 
